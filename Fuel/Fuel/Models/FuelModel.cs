@@ -10,6 +10,6 @@ namespace Fuel.Models
         public int Fuel { get; set; }
         public int Type { get; set; }
         public int Distance { get; set; }
-        public double AvgConsumption { get; set; }
+        public double? AvgConsumption { get; set; }
     }
 }
