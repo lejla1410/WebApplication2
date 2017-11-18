@@ -1,0 +1,20 @@
+﻿@model WebApplication2.Models.InviteModel
+
+@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>UploadFile</h2>
+
+@using (Html.BeginForm("UploadFile", "Nowy", FormMethod.Post, new { @class = "form - horizontal" }))
+{
+
+    <div class="form-horizontal">
+        <input type="file" name="photo" accept="image/jpg, image/jpeg" />
+        <input type="submit" value="Create" class="btn btn-default" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

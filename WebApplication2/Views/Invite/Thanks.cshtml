@@ -1,0 +1,16 @@
+﻿@model WebApplication2.Models.InviteModel
+@{
+    ViewBag.Title = "Thanks";
+}
+
+
+<h1>Dziękujemy, @Model.Name @Model.Surname !</h1>
+@if (Model.WillAttend == true)
+{
+    @:Cieszymy się, że przyjedziesz do nas. Napoje są juz w lodówce!
+}
+else
+{
+    @:Przykro mi, że nie możesz się zjawić, ale dziękujemy za informacje!
+
+}

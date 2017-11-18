@@ -1,0 +1,59 @@
+﻿@model WebApplication2.Models.BmiModel
+
+@{
+    ViewBag.Title = "BMIChecker";
+}
+
+<h2>BMIChecker</h2>
+
+@using (Html.BeginForm("BMIChecker2", "BMI", FormMethod.Post, new { @class = "form-horizontal" })) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>BmiModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.MyWeight, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MyWeight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MyWeight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MyHeight, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MyHeight, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MyHeight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MyGender, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(x => x.MyGender, new[]
+           {
+               new SelectListItem { Text= "Kobieta", Value=bool.TrueString},
+               new SelectListItem {Text="Mężczyzna", Value=bool.FalseString }
+
+           }, "Wybierz opcję", new { @class = "fore-control" })
+
+
+                @*//@Html.EditorFor(model => model.WillAttend, new { htmlAttributes = new { @class = "form-control" } })
+            //@Html.ValidationMessageFor(model => model.WillAttend, "", new { @class = "text-danger" })*@
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+@ViewBag.Dane
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
